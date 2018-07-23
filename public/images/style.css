@@ -3,19 +3,12 @@ body {
 	font-family: 'Merriweather Sans', sans-serif;
 }
 
-img {
-	width: 30%;
-	height: 30%;
-	padding: 20px;
+.petPicture {
+	width: 90%;
+	height: 90%;
+	padding: 10px 10px 10px 10px;
 }
 
-.picture {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-content: center;
-	padding: 20px;
-}
 
 .statement {
   padding: 10px;
@@ -24,18 +17,31 @@ img {
   font-family: 'Merriweather Sans', sans-serif;
 }
 
+.picture {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: center;
+	padding: 30px;
+}
+
 .pickCat {
 	display: flex;
-	background-color: red;
 	flex-direction: row-reverse;
+	font-size: 30px;
+
 
 }
 
 .pickDog {
 	display: flex;
-	background-color: red;
 	flex-direction: row;
-	
+	font-size: 30px;
+}
+
+.containerWord {
+	display: flex;
+	justify-content: space-evenly;
 
 }
 
