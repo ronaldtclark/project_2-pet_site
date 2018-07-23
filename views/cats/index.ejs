@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cats Index</title>
+  </head>
+  <body>
+   
+    <header>
+     <h1>Compatible Cats</h1>
+     
+     <nav>
+       <ul>
+         <li><a href="/">Home</a></li>
+         <li><a href="/users/id">User Profile</a></li>
+         <li><a href="/auth/logout">Log Out</a></li>
+       </ul>
+     </nav>
+    </header>
+
+    <main>
+      <ul>
+        <% for (let i = 0; i < cats.length; i++) { %>
+          <li>
+            <img src="<%=cats[i].photo%>"><br>
+            <a href="/cats/<%=cats[i]._id%>"><%=cats[i].name%></a>
+          </li><br>
+        <% } %>
+      </ul>
+    </main>
+
+  </body>
+</html>

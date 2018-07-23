@@ -1,5 +1,6 @@
 body {
 	background-color: lavender;
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 img {
@@ -8,7 +9,7 @@ img {
 	padding: 20px;
 }
 
-.pick {
+.picture {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -23,9 +24,20 @@ img {
   font-family: 'Merriweather Sans', sans-serif;
 }
 
+.pickCat {
+	display: flex;
+	background-color: red;
+	flex-direction: row-reverse;
 
+}
 
+.pickDog {
+	display: flex;
+	background-color: red;
+	flex-direction: row;
+	
 
+}
 
 
 

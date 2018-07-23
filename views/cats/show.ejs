@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=cat.name%></title>
+  </head>
+  <body>
+    <header>
+      <h1><%=cat.name%></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/cats">Back to Cats</a></li>
+          <li><a href="/users/id">User Profile</a></li>
+          <li><a href="/auth/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <img src="<%=cat.photo%>"><br>
+      <h2>Name: <%=cat.name%></h2><br>
+      <h2>Age: <%=cat.age%></h2><br>
+      <h2>Breed: <%=cat.breed%></h2><br>
+      <h2>Good with children? 
+        <% if(cat.goodWithKids === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>Good with other pets? 
+        <% if(cat.goodWithPets === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>High energy? 
+        <% if(cat.highEnergy === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+    </main>
+  </body>
+</html>

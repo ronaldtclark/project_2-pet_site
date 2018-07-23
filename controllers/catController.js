@@ -6,33 +6,57 @@ const User = require('../models/users')
 // INDEX
 router.get('/', async (req, res) => {
   try {
-    const foundCats = await cat.find({})
-    res.render('/cats/index.ejs')
+    const foundCats = await Cat.find({})
+    res.render('cats/index.ejs', {cats: foundCats})
   } catch (err) {
     console.log(err)
   }
 })
 
 // NEW
-router.get('/new', async (req, res) => {
-  try {
-    const allCats = await cat.find({})
-    res.render('/cats/new.ejs', {cats: allcats})
-  } catch (err) {
-    res.send(err)
-  }
+router.get('/new', (req, res) => {
+  res.render('cats/new.ejs')
 }) 
 
-// SHOW
-router.get(':/id', async (req, res) => {
-  try{
-    const foundCat = await cat.findById(req.params.id)
-    const foundUser = await User.findOne({"cats._id": req.params.id})
-    res.render('cats/show.ejs', {cat: foundcat, user:foundUser})
+
+// CREATE
+router.post('/', async (req, res) => {
+  if(req.body.goodWithKids === 'on') {
+    req.body.goodWithKids = true
+  } else {
+    req.body.goodWithKids = false
+  }
+  if(req.body.goodWithPets === 'on') {
+    req.body.goodWithPets = true
+  } else {
+    req.body.goodWithPets = false
+  }
+  if(req.body.highEnergy === 'on') {
+    req.body.highEnergy = true
+  } else {
+    req.body.highEnergy = false
+  }
+  try {
+    const createdCat = await Cat.create(req.body)
+    res.redirect('/cats')
   } catch (err) {
     res.send(err)
   }
-
 })
+
+// SHOW
+router.get('/:id', async (req, res) => {
+  try {
+    const foundCat = await Cat.findById(req.params.id)
+    res.render('cats/show.ejs', {cat: foundCat})
+  } catch (err) {
+    res.send(err)
+  }
+})
+
+// 
+
+
+
 
 module.exports = router;
