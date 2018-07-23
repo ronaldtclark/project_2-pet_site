@@ -16,17 +16,18 @@ app.use(session({
 }))
 app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({extended: false}))
+app.use(express.static('public'))
 
 //CONTROLLER ROUTES
 // const userController = require('./controllers/userController')
-const dogController = require('./controllers/dogController')
 // const catController = require('./controllers/catController')
+const dogController = require('./controllers/dogController')
 // const authController = require('./controllers/authController')
 
 //SET UP CONTROLLER ROUTES
 // app.use('/users', userController)
-app.use('/dogs', dogController)
 // app.use('/cats', catController)
+app.use('/dogs', dogController)
 // app.use('/auth', authController)
 
 app.get('/', (req, res) => {

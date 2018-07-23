@@ -1,0 +1,39 @@
+body {
+	background-color: lavender;
+}
+
+img {
+	width: 30%;
+	height: 30%;
+	padding: 20px;
+}
+
+.pick {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: center;
+	padding: 20px;
+}
+
+.statement {
+  padding: 10px;
+  background: yellow;
+  border: 2px solid red;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
