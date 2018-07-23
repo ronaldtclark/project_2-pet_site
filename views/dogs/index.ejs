@@ -21,9 +21,9 @@
       <ul>
         <% for (let i = 0; i < dogs.length; i++) { %>
           <li>
-            <img src="<%=dogs[i].photo%>">
+            <img src="<%=dogs[i].photo%>"><br>
             <a href="/dogs/<%=dogs[i]._id%>"><%=dogs[i].name%></a>
-          </li>
+          </li><br>
         <% } %>
       </ul>
     </main>
