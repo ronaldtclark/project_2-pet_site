@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Dog</title>
+</head>
+<body>
+  
+  <header>
+    <h1>Edit <%=dog.name%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/dogs">Dogs Index</a></li>
+        <li><a href="/auth/logout">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form action="/dogs/<%=dog.id%>?_method=PUT" method="POST">
+    <input type="text" name="photo" value="<%=dog.photo%>"><br>
+    <input type="text" name="name" value="<%=dog.name%>"><br>
+    <input type="number" name="age" value="<%=dog.age%>"><br>
+    <input type="text" name="breed" value="<%=dog.breed%>"><br>
+    Good with children? <input type="checkbox" name="goodWithKids"
+      <% if( dog.goodWithKids === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    Good with other pets? <input type="checkbox" name="goodWithPets"
+      <% if( dog.goodWithPets === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    Highly energetic? <input type="checkbox" name="highEnergy"
+      <% if( dog.highEnergy === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    <input type="submit" value="Submit Changes">
+  </form>
+</body>
+</html>
