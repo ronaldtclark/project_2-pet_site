@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Index</title>
+</head>
+<body>
+  <header>
+    <h1>User Index</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/auth/logout">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Username - Last Name, First Name</h2>
+    <% for (let i = 0; i < users.length; i++) { %>
+           <li><a href="/users/<%=users[i].id%>"><%=users[i].username%></a> - <%=users[i].lastName%>, <%=users[i].firstName%></li>
+    <% } %>
+  </main>
+</body>
+</html>
