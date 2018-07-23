@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=dog.name%></title>
+  </head>
+  <body>
+    <header>
+      <h1><%=dog.name%></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/dogs">Back to Dogs</a></li>
+          <li><a href="/users/id">User Profile</a></li>
+          <li><a href="/auth/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <img src="<%=dog.photo%>"><br>
+      <h2>Name: <%=dog.name%></h2><br>
+      <h2>Age: <%=dog.age%></h2><br>
+      <h2>Breed: <%=dog.breed%></h2><br>
+      <h2>Good with children? 
+        <% if(dog.goodWithKids === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>Good with other pets? 
+        <% if(dog.goodWithPets === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>High energy? 
+        <% if(dog.highEnergy === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+    </main>
+  </body>
+</html>

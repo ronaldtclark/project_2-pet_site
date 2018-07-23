@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Dog</title>
+  </head>
+  <body>
+    
+    <header>
+      <h1>Add a New Dog</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/dogs">Dogs Index</a></li>
+          <li><a href="/auth/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form action="/dogs" method="POST">
+        <input type="text" name="photo" placeholder="Photo URL"><br>
+        <input type="text" name="name" placeholder="Dog Name"><br>
+        <input type="number" name="age" placeholder="Age"><br>
+        <input type="text" name="breed" placeholder="Breed"><br>
+        Good with children? <input type="checkbox" name="goodWithKids"><br>
+        Good with other pets? <input type="checkbox" name="goodWithPets"><br>
+        Highly energetic? <input type="checkbox" name="highEnergy"><br>
+        <input type="submit">
+      </form>
+    </main>
+    
+  </body>
+</html>

@@ -18,17 +18,19 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({extended: false}))
 
 //CONTROLLER ROUTES
-const userController = require('./controllers/userController')
-const petController = require('./controllers/petController')
-const authController = require('./controllers/authController')
+// const userController = require('./controllers/userController')
+const dogController = require('./controllers/dogController')
+// const catController = require('./controllers/catController')
+// const authController = require('./controllers/authController')
 
 //SET UP CONTROLLER ROUTES
-app.use('/users', userController)
-app.use('/pets', petController)
-app.use('/auth', authController)
+// app.use('/users', userController)
+app.use('/dogs', dogController)
+// app.use('/cats', catController)
+// app.use('/auth', authController)
 
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.render('../index.ejs')
 })
 
 //LISTENER
