@@ -41,7 +41,15 @@
           <span> No </span>
         <% } %>
       </h2><br>
-      <a href="/dogs/<%=dog.id%>/edit">Edit <%=dog.name%>'s Info</a>
+      
+      <form action="/dogs/<%=dog.id%>/edit" method="GET">
+        <button type="submit">Edit <%=dog.name%>'s Info</button>
+      </form>
+
+      <form action="/dogs/<%=dog.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=dog.name%>'s Info</button>
+      </form>
+
     </main>
   </body>
 </html>

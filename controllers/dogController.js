@@ -90,7 +90,14 @@ router.put('/:id', async (req, res) => {
 })
 
 // DELETE
-
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedDog = await Dog.findByIdAndRemove(req.params.id)
+    res.redirect('/dogs')
+  } catch (err) {
+    res.send (err)
+  }
+})
 
 
 
