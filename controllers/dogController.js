@@ -19,7 +19,7 @@ router.get('/new', async (req, res) => {
     const allDogs = await Dog.find({})
     res.render('/dogs/new.ejs', {dogs: allDogs})
   } catch (err) {
-    res.sedn(err)
+    res.send(err)
   }
 }) 
 
