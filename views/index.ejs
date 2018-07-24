@@ -6,8 +6,12 @@
 <link rel="stylesheet" type="text/css" href="../images/style.css">
 <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
 <body>
+
 	<div class="container" align="center">
 	  <h1>Pet Adoption</h1>
+
+	  <%- include('partials/nav'); -%>
+
 		<nav>
 		  <ul>
 		    <li><a href="/">Register</a></li>
@@ -19,11 +23,11 @@
 
 	<div class="containerPet">
 
-	  <div class="picture">
-		  <a href="/dogs"><img class="petPicture" src="https://i.imgur.com/uyAlE2D.jpg"></a>
-		  <a href="/cats"><img class="petPicture" src="https://i.imgur.com/W7loMkX.jpg"></a>
-	  </div>
-	</div>
+		 <div class="picture">
+			  <a href="/dogs"><img class="petPicture" src="https://i.imgur.com/uyAlE2D.jpg"></a>
+			  <a href="/cats"><img class="petPicture" src="https://i.imgur.com/W7loMkX.jpg"></a>
+		 </div>
+	 </div>
 	  
 	  <!-- <div class="petDog">
          <a class="pickDog" href="/dogs">Dogs</a>
@@ -40,6 +44,8 @@
 	  	
 	  </nav>
 		
+
+
 
 </body>
 </html>

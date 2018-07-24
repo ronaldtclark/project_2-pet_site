@@ -3,9 +3,14 @@
   <head>
     <title><%=cat.name%></title>
   </head>
+  <link rel="stylesheet" type="text/css" href="../images/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
   <body>
     <header>
       <h1><%=cat.name%></h1>
+
+      <%- include('../partials/nav'); -%>
+
       <nav>
         <ul>
           <li><a href="/">Home</a></li>

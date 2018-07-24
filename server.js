@@ -31,7 +31,7 @@ app.use('/dogs', dogController)
 // app.use('/auth', authController)
 
 app.get('/', (req, res) => {
-  res.render('../index.ejs')
+  res.render('index.ejs')
 })
 
 //LISTENER
