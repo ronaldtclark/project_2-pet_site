@@ -4,18 +4,39 @@
   <title>Log In</title>
 </head>
 <body>
-<h4>Log In</h4>
-  <form action="/auth/login" method="POST">
-    Username: <input type="text" name="username" placeholder="username">
-    Password: <input type="password" name="password" placeholder="password">
-    <button type="submit">Login</button>
-  </form>
+  <link rel="stylesheet" type="text/css" href="../images/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <header>
 
-  <h4>Register</h4>
-  <form action="/auth/register" method="POST">
-    Username: <input type="text" name="username" placeholder="username">
-    Password: <input type="password" name="password" placeholder="password">
-    <button type="submit">Register</button>
-  </form>
+    <%- include('../partials/nav'); -%>
+  
+  </header>
+
+  <form class="left-section" action="/auth/login" method="POST">
+    <fieldset>
+      <legend>Log In</legend>
+       Username: <input type="text" name="username" placeholder="username">
+       Password: <input type="password" name="password" placeholder="password"><br>
+        <button type="submit">Login</button>
+    </fieldset>
+</form>
+
+
+<form class="right-section" action="/auth/register" method="POST">
+  <fieldset>
+    <!-- <legend>Register</legend> -->
+       <label for="reg-username">Username: </label>
+       <input id="reg-username" type="text" name="username" placeholder="username">
+       <label for="reg-password">
+         Password: 
+       </label>
+       <input id="reg-password" type="password" name="password" placeholder="password">
+        <button type="submit">Register</button>
+  </fieldset>
+</form>
 </body>
 </html>
+
+
+
+
