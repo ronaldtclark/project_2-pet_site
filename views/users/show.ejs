@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+</head>
+<body>
+  <header>
+    <h1><%=user.username%>'s Profile</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <h3>First Name: <%=user.firstName%></h3><br>
+    <h3>Last Name: <%=user.lastName%></h3><br>
+    <h3>Email: <%=user.email%></h3><br>
+    <h3>Phone: <%=user.phone%></h3><br>
+    <h3>Age: <%=user.age%></h3><br>
+    
+    <a href="/users/<%=user.id%>/edit">Edit Information</a>
+
+    <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete Profile</button>
+    </form>
+
+    <h2>Submitted Applications</h2>
+
+  </main>
+</body>
+</html>

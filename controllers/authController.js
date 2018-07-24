@@ -1,7 +1,9 @@
 const express = require('express')
-const router  = express.Router()
-const User    = require('../models/users')
-const bcrypt  = require('bcrypt')
+const router = express.Router()
+const User = require('../models/users')
+const Dog = require('../models/dogs');
+const Cat = require('../models/cats')
+const bcrypt = require('bcrypt')
 
 
 //
@@ -41,8 +43,8 @@ router.get('/cats', (req, res) => {
   }
 })
 
-//
-router.post('/login', (req, res) => {
+// REGISTER
+router.post('/register', (req, res) => {
   const password = req.body.password
   const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
   const userDbEntry = {}
@@ -51,7 +53,27 @@ router.post('/login', (req, res) => {
   User.create(userDbEntry, (err, user) => {
     req.session.username = user.username
     req.session.loggedIn = true
-    res.redirect('/users')
+    res.redirect('/users/new')
+  })
+})
+
+// LOG IN
+router.post('/login', (req, res) => {
+  User.findOne({username: req.body.username}, (err, user) => {
+    if (user) { 
+      if (bcrypt.compareSync(req.body.password, user.password)) {
+        console.log(req.session) 
+        req.session.loggedIn = true;
+        req.session.username = req.body.username
+        res.redirect('/')
+      } else {
+        req.session.message = "Username or Password Incorrect"
+        res.redirect('/auth/login')
+      }
+    } else {
+      req.session.message = "Username or Password Incorrect"
+      res.redirect('/auth/login')
+    }
   })
 })
 
@@ -61,7 +83,7 @@ router.get('/logout', (req, res) => {
     if (err) {
       res.send('error destroying session')
     } else {
-      res.redirect('/index')
+      res.redirect('/')
     }
   })
 })

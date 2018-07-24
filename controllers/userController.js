@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const createdUser = await User.create(req.body)
-    res.redirect('/users')
+    res.redirect('/')
   } catch (err) {
     res.send(err)
   }

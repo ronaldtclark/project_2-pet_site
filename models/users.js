@@ -10,11 +10,11 @@ const userSchema = new mongoose.Schema({
   email: String,
   phone: String, 
   age: Number,
-  maritalStatus: Boolean,
-  children: Boolean,
-  childrenAges: String,
-  yard: Boolean,
-  otherPets: Boolean
+  // maritalStatus: String,
+  // children: String,
+  // childrenAges: String,
+  // yard: String,
+  // otherPets: String
 })
 
 module.exports = mongoose.model('User', userSchema)
