@@ -4,16 +4,13 @@
   <title>Edit Dog</title>
 </head>
 <body>
-  
+  <link rel="stylesheet" type="text/css" href="../images/style.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
   <header>
     <h1>Edit <%=dog.name%></h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/dogs">Dogs Index</a></li>
-        <li><a href="/auth/logout">Log Out</a></li>
-      </ul>
-    </nav>
+
+    <%- include('../partials/nav'); -%>
+  
   </header>
 
   <form action="/dogs/<%=dog.id%>?_method=PUT" method="POST">
