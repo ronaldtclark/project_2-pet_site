@@ -15,7 +15,7 @@
 
   <main>
     <h2>Enter Information for <%=user.username%></h2>
-    <form action="/users" method="POST">
+    <form action="/users/<%=user.id%>" method="POST">
       <input type="text" name="firstName" placeholder="First Name"><br>
       <input type="text" name="lastName" placeholder="Last Name"><br>
       <input type="text" name="email" placeholder="Email Address"><br>
