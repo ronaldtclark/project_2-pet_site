@@ -7,7 +7,10 @@ const User = require('../models/users')
 router.get('/', async (req, res) => {
   try {
     const foundCats = await Cat.find({})
-    res.render('cats/index.ejs', {cats: foundCats})
+    res.render('cats/index.ejs', {
+      cats: foundCats,
+      userId: req.session.id
+    })
   } catch (err) {
     console.log(err)
   }
@@ -15,7 +18,9 @@ router.get('/', async (req, res) => {
 
 // NEW
 router.get('/new', (req, res) => {
-  res.render('cats/new.ejs')
+  res.render('cats/new.ejs', {
+      userId: req.session.id
+    })
 }) 
 
 
@@ -48,7 +53,10 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const foundCat = await Cat.findById(req.params.id)
-    res.render('cats/show.ejs', {cat: foundCat})
+    res.render('cats/show.ejs', {
+      cat: foundCat,
+      userId: req.session.id
+    })
   } catch (err) {
     res.send(err)
   }
