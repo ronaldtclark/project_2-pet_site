@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Cat</title>
+</head>
+<body>
+  <link rel="stylesheet" type="text/css" href="../images/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <header>
+    <h1>Edit <%=cat.name%></h1>
+
+    <%- include('../partials/nav'); -%>
+  
+  </header>
+
+  <form action="/cats/<%=cat.id%>?_method=PUT" method="POST">
+    <input type="text" name="photo" value="<%=cat.photo%>"><br>
+    <input type="text" name="name" value="<%=cat.name%>"><br>
+    <input type="number" name="age" value="<%=cat.age%>"><br>
+    <input type="text" name="breed" value="<%=cat.breed%>"><br>
+    Good with children? <input type="checkbox" name="goodWithKids"
+      <% if( cat.goodWithKids === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    Good with other pets? <input type="checkbox" name="goodWithPets"
+      <% if( cat.goodWithPets === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    Highly energetic? <input type="checkbox" name="highEnergy"
+      <% if( cat.highEnergy === true) { %>
+        checked 
+      <% } %>
+    ><br>
+    <input type="submit" value="Submit Changes">
+  </form>
+</body>
+</html>
