@@ -13,12 +13,29 @@
     <h1>Edit Profile for <%=user.username%></h1>
   </header>
   <main>
-    <form action="/users/<%=user.id%>?_method=PUT" method="POST">
+    <form action="/users/<%=userId%>?_method=PUT" method="POST">
       <input type="text" name="firstName" value="<%=user.firstName%>"><br>
       <input type="text" name="lastName" value="<%=user.lastName%>"><br>
       <input type="text" name="email" value="<%=user.email%>"><br>
       <input type="text" name="phone" value="<%=user.phone%>"><br>
       <input type="number" name="age" value="<%=user.age%>"><br>
+      Marital Status: <input type="radio" name="maritalStatus" value="single">
+                      <label for="single">Single</label>
+                      <input type="radio" name="maritalStatus" value="married">
+                      <label for="married">Married</label><br>
+      Do you have children? <input type="radio" name="children" value="yes">
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="children" value="no">
+                            <label for="no">No</label><br>
+      If Yes, enter children's ages: <input type="text" name="childrenAges" value="<%=user.childrenAges%>"><br>
+      Do you have a yard? <input type="radio" name="yard" value="yes">
+                          <label for="yes">Yes</label>
+                          <input type="radio" name="yard" value="no">
+                          <label for="no">No</label><br>
+      Do you have other pets? <input type="radio" name="otherPets" value="yes">
+                              <label for="yes">Yes</label>
+                              <input type="radio" name="otherPets" value="no">
+                              <label for="no">No</label><br>
     
       <button type="submit">Update Profile</button>
     </form> 

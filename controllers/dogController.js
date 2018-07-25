@@ -7,7 +7,10 @@ const User = require('../models/users')
 router.get('/', async (req, res) => {
   try {
     const foundDogs = await Dog.find({})
-    res.render('dogs/index.ejs', {dogs: foundDogs})
+    res.render('dogs/index.ejs', {
+      dogs: foundDogs,
+      userId: req.session.id
+    })
   } catch (err) {
     console.log(err)
   }
@@ -15,7 +18,9 @@ router.get('/', async (req, res) => {
 
 // NEW
 router.get('/new', (req, res) => {
-  res.render('dogs/new.ejs')
+  res.render('dogs/new.ejs', {
+      userId: req.session.id
+    })
 }) 
 
 
@@ -48,7 +53,10 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const foundDog = await Dog.findById(req.params.id)
-    res.render('dogs/show.ejs', {dog: foundDog})
+    res.render('dogs/show.ejs', {
+      dog: foundDog,
+      userId: req.session.id
+    })
   } catch (err) {
     res.send(err)
   }
@@ -58,7 +66,10 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/edit', async (req, res) => {
   try {
     const foundDog = await Dog.findById(req.params.id)
-    res.render('dogs/edit.ejs', {dog: foundDog})
+    res.render('dogs/edit.ejs', {
+      dog: foundDog,
+      userId: req.session.id
+    })
   } catch (err) {
     res.send (err)
   }
