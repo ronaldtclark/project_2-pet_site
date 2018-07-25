@@ -1,3 +1,10 @@
+body {
+  background-color: #fff;
+  color: black;
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
+
+}
 
 li {
 	list-style-type: none;
@@ -7,6 +14,9 @@ li {
 	display: flex;
 	flex-direction: row;
 }
+
+
+/*image hover for cat and dog*/
 
 .hover01 figure img {
 	transform: scale(1);
@@ -22,6 +32,8 @@ li {
 	width: 100%;
 	height: 100%;
 }
+
+/*///////////////////*/
 
 .column {
 	margin: 15px 15px 0;
@@ -65,6 +77,9 @@ li {
 	transition: .3s ease-in-out;
 	opacity: 0;
 }
+
+/*image attributes*/
+
 figure {
 	width: 300px;
 	height: 200px;
@@ -78,8 +93,9 @@ figure:hover+span {
 	opacity: 1;
 }
 
+/*///////////////////*/
 
-*{
+* {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -89,12 +105,7 @@ figure:hover+span {
   margin: 0;
 }
 
-body{
-  background-color: #fff;
-  color: black;
-  font-family: 'Indie Flower', cursive;
-  font-size: 25px;
-}
+
 
 .statement {
 	display: flex;
@@ -102,13 +113,14 @@ body{
 	flex-direction: column;
 	margin-right: 400px;
     margin-left: 400px;
+    font-weight: bold;
 }
 
 /* borders for almost every element */
-#pagewrap, #main, nav, .left-section, .right-section, .imgs, footer{
+#pagewrap, #main, nav, /*.left-section, .right-section,*/ .imgs, footer{
   border: 5px solid #ccc;
   border-collapse: collapse;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 
@@ -174,6 +186,7 @@ nav ul li a:hover, nav ul li a:active{
   line-height: 1.8;
   text-indent: 5px;
   text-align: center;
+
 
 }
 
@@ -303,15 +316,56 @@ fieldset {
 	align-items: center;
 	flex-direction: column;*/
 	display: block;
+	margin: 60px;
+	text-align: center;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+}
+
+fieldset input, fieldset label, fieldset button {
+	display: block;
 	margin: auto;
 	text-align: center;
 }
 
-/*fieldset input, fieldset label, fieldset button {
-	display: block;
-	margin: auto;
-	text-align: center;
-}*/
+button {
+	/*Button Two*/
+  border-radius: 5px;
+  background-color:#ccc;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+}
+
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
 
 
