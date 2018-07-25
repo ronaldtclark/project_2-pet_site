@@ -297,17 +297,21 @@ nav ul li a:hover, nav ul li a:active{
 
 fieldset {
 	width: 50%;
-	height: 600px;
-	display: flex;
-	justify-content: flex-end;
+	height: 50%;
+	/*display: flex;*/
+	/*justify-content: flex-end;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column;*/
+	display: block;
+	margin: auto;
+	text-align: center;
 }
 
-fieldset input, fieldset label, fieldset button {
+/*fieldset input, fieldset label, fieldset button {
 	display: block;
-	/*text-align: center;*/
-}
+	margin: auto;
+	text-align: center;
+}*/
 
 
 
