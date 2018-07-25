@@ -7,14 +7,15 @@
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 <body>
   <header>
-    <h1>New User Information</h1>
+    <h1 align="center">New User Information</h1>
 
       <%- include('../partials/nav'); -%>
       
   </header>
 
   <main>
-    <h2>Enter Information</h2>
+    <fieldset align="center">
+    <legend><h2>Enter Information</h2></legend>
     <form action="/users/<%=userId%>?_method=PUT" method="POST">
       <input type="text" name="firstName" placeholder="First Name"><br>
       <input type="text" name="lastName" placeholder="Last Name"><br>
@@ -38,8 +39,14 @@
                               <label for="yes">Yes</label>
                               <input type="radio" name="otherPets" value="no">
                               <label for="no">No</label><br>
-      <input type="submit">
+      <button class="button1"><span>Submit</span></button>
+    </div>
+    <div class="sub-main">
+    </fieldset>
     </form>
+  </fieldset>
   </main>
 </body>
 </html>
+
+
