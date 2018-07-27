@@ -135,6 +135,8 @@ router.delete('/:id', async (req, res) => {
     res.redirect('/cats')
   } catch (err) {
     res.send (err)
+  }
+})
 
 
 //SUCCESS

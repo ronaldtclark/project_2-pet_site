@@ -40,5 +40,5 @@ app.get('/', (req, res) => {
 
 //LISTENER
 app.listen(port, () => {
-  console.log('app listening on port', PORT)
+  console.log('app listening on port', port)
 })
