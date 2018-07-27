@@ -66,53 +66,53 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-<<<<<<< HEAD
-// EDIT
-router.get('/:id/edit', async (req, res) => {
-  try {
-    const foundCat = await Cat.findById(req.params.id)
-    res.render('cats/edit.ejs', {
-      cat: foundCat,
-      userId: req.session.id
-    })
-  } catch (err) {
-    res.send (err)
-  }
-})
 
-// UPDATE
-router.put('/:id', async (req, res) => {
-  if(req.body.goodWithKids === 'on') {
-    req.body.goodWithKids = true
-  } else {
-    req.body.goodWithKids = false
-  }
-  if(req.body.goodWithPets === 'on') {
-    req.body.goodWithPets = true
-  } else {
-    req.body.goodWithPets = false
-  }
-  if(req.body.highEnergy === 'on') {
-    req.body.highEnergy = true
-  } else {
-    req.body.highEnergy = false
-  }
-  try {
-    const updatedCat = await Cat.findByIdAndUpdate(req.params.id, req.body, {new:true})
-    res.redirect('/cats')
-  } catch (err) {
-    res.send (err)
-  }
-})
+// // EDIT
+// router.get('/:id/edit', async (req, res) => {
+//   try {
+//     const foundCat = await Cat.findById(req.params.id)
+//     res.render('cats/edit.ejs', {
+//       cat: foundCat,
+//       userId: req.session.id
+//     })
+//   } catch (err) {
+//     res.send (err)
+//   }
+// })
 
-// DELETE
-router.delete('/:id', async (req, res) => {
-  try {
-    const deletedCat = await Cat.findByIdAndRemove(req.params.id)
-    res.redirect('/cats')
-  } catch (err) {
-    res.send (err)
-=======
+// // UPDATE
+// router.put('/:id', async (req, res) => {
+//   if(req.body.goodWithKids === 'on') {
+//     req.body.goodWithKids = true
+//   } else {
+//     req.body.goodWithKids = false
+//   }
+//   if(req.body.goodWithPets === 'on') {
+//     req.body.goodWithPets = true
+//   } else {
+//     req.body.goodWithPets = false
+//   }
+//   if(req.body.highEnergy === 'on') {
+//     req.body.highEnergy = true
+//   } else {
+//     req.body.highEnergy = false
+//   }
+//   try {
+//     const updatedCat = await Cat.findByIdAndUpdate(req.params.id, req.body, {new:true})
+//     res.redirect('/cats')
+//   } catch (err) {
+//     res.send (err)
+//   }
+// })
+
+// // DELETE
+// router.delete('/:id', async (req, res) => {
+//   try {
+//     const deletedCat = await Cat.findByIdAndRemove(req.params.id)
+//     res.redirect('/cats')
+//   } catch (err) {
+//     res.send (err)
+
 //SUCCESS
 router.get('/:id/success', async (req, res) => {
   try {
@@ -125,7 +125,7 @@ router.get('/:id/success', async (req, res) => {
     })
   } catch (err) {
     res.send(err)
->>>>>>> 0519883d988aa44dc7f9b258c19fbda3edc9f14a
+
   }
 })
 
