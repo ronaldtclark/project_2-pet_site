@@ -7,10 +7,9 @@ const Cat = require('../models/cats')
 //INDEX
 router.get('/', async (req, res) => {
   try {
-    const foundUser = await User.findById(req.session.userId)
-    console.log(foundUser, 'this is found user')
+    const allUsers = await User.find({})
     res.render('users/index.ejs', {
-      users: foundUser,
+      users: allUsers,
       userId: req.session.userId
     })
   } catch (err) {
@@ -33,9 +32,13 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const foundUser = await User.findById(req.session.userId)
+    const foundDogs = await Dog.find({})
+    const foundCats = await Cat.find({})
     res.render('users/show.ejs', {
       user: foundUser,
-      userId: req.session.userId
+      userId: req.session.userId,
+      dogs: foundDogs,
+      cats: foundCats
     })
   } catch (err) {
     res.send(err)
@@ -77,18 +80,6 @@ router.put('/:id', async (req, res, next) => {
 
 })
 
-
-//POST
-// router.post('/', async (req, res) => {
-//   try {
-//     console.log(req.body, 'this is req.body')
-//     console.log(req.session.userId, 'this is req.session.userId')
-//     const createdUser = await User.findByIdAndUpdate(req.session.userId, req.body)
-//     res.redirect('/')
-//   } catch (err) {
-//     res.send(err)
-//   }
-// })
 
 // DELETE 
 router.delete('/:id', async (req, res) => {

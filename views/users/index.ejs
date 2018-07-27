@@ -3,8 +3,8 @@
 <head>
   <title>User Index</title>
 </head>
-<link rel="stylesheet" type="text/css" href="../images/style.css">
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<!-- <link rel="stylesheet" type="text/css" href="../images/style.css"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
 <body>
   <header>
     <h1>User Index</h1>
@@ -15,7 +15,7 @@
   <main>
     <h2>Username - Last Name, First Name</h2>
     <% for (let i = 0; i < users.length; i++) { %>
-           <li><a href="/users/<%=user[i].userId%>"><%=users[i].username%></a> - <%=users[i].lastName%>, <%=users[i].firstName%></li>
+           <li><a href="/users/<%=users[i].id%>"><%=users[i].username%></a> - <%=users[i].lastName%>, <%=users[i].firstName%></li>
     <% } %>
   </main>
 </body>

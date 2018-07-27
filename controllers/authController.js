@@ -55,17 +55,6 @@ router.post('/register', (req, res) => {
   userDbEntry.username = req.body.username
   userDbEntry.password = passwordHash
   User.create(userDbEntry, (err, user) => {
-    // userDbEntry.username = req.session.username, 
-    // userDbEntry.firstName = req.session.firstName,
-    // userDbEntry.lastName = req.session.lastName,
-    // userDbEntry.email = req.session.email,
-    // userDbEntry.phone = req.session.phone,
-    // userDbEntry.age = req.session.age, 
-    // userDbEntry.maritalStatus = req.session.maritalStatus,
-    // userDbEntry.children = req.session.children,
-    // userDbEntry.childrenAges = req.session.childrenAges,
-    // userDbEntry.yard = req.session.yard,
-    // userDbEntry.otherPets = req.session.otherPets,
     req.session.loggedIn = true;
     req.session.userId = user.id;
     res.redirect('/users/new')
@@ -99,7 +88,7 @@ router.get('/logout', (req, res) => {
     if (err) {
       res.send('error destroying session')
     } else {
-      res.redirect('/')
+      res.redirect('/auth/login')
     }
   })
 })

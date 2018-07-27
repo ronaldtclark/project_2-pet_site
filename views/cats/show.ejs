@@ -3,22 +3,15 @@
   <head>
     <title><%=cat.name%></title>
   </head>
-  <link rel="stylesheet" type="text/css" href="../images/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="../images/style.css"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
   <body>
     <header>
       <h1><%=cat.name%></h1>
 
       <%- include('../partials/nav'); -%>
 
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/cats">Back to Cats</a></li>
-          <li><a href="/users/<%=userId%>">User Profile</a></li>
-          <li><a href="/auth/logout">Log Out</a></li>
-        </ul>
-      </nav>
+    
     </header>
     <main>
       <img src="<%=cat.photo%>"><br>
@@ -47,7 +40,22 @@
         <% } %>
       </h2><br>
 
-    
+
+      <% if (user.username === 'admin') { %>
+      <form action="/cats/<%=cat.id%>/edit" method="GET">
+        <button type="submit">Edit <%=cat.name%>'s Info</button>
+      </form>
+
+      <form action="/cats/<%=cat.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=cat.name%>'s Info</button>
+      </form>
+      <% } else { %>
+
+      <form action="/cats/<%=cat.id%>/success" method="GET">
+        <button type="submit">Submit Application for <%=cat.name%></button>
+      </form>
+      <% } %>
+
     </main>
   </body>
 </html>

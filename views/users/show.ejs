@@ -14,6 +14,16 @@
 
   </header>
   <main>
+
+    <% if (user.username === 'admin') { %>
+    <h3>Admin Options</h3>
+    <ul>
+      <li><a href="/users">User Index</a></li>
+      <li><a href="../dogs/new">Add a New Dog</a></li>
+      <li><a href="../cats/new">Add a New Cat</a></li>
+    </ul>
+    <% } else { %>
+
     <h3>First Name: <%=user.firstName%></h3><br>
     <h3>Last Name: <%=user.lastName%></h3><br>
     <h3>Email: <%=user.email%></h3><br>
@@ -25,13 +35,18 @@
     <h3>Yard: <%=user.yard%></h3><br>
     <h3>Other Pets: <%=user.otherPets%></h3><br>
     
-    <a href="/users/<%=user.id%>/edit">Edit Information</a>
+    <a href="/users/<%=user.id%>/edit">Edit Information</a><br>
 
     <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
         <button type="submit">Delete Profile</button>
     </form>
 
     <h2>Submitted Applications</h2>
+
+    <a href="/dogs/<%=dogs[0]._id%>"><%=dogs[0].name%></a><br>
+    <a href="/dogs/<%=dogs[1]._id%>"><%=dogs[1].name%></a>
+
+    <% } %>
   </main>
 <!-- </div> -->
 </body>
