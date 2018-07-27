@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
   age: Number,
   maritalStatus: String,
   children: String,
-  childrenAges: String,
+  childrensAges: String,
   yard: String,
   otherPets: String
 })
