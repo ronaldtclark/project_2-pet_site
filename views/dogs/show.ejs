@@ -1,11 +1,11 @@
-'/<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title><%=dog.name%></title>
   </head>
   <body>
-    <link rel="stylesheet" type="text/css" href="../images/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="../images/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> -->
     <header>
       <h1><%=dog.name%></h1>
       
@@ -39,6 +39,7 @@
         <% } %>
       </h2><br>
       
+      <% if (user.username === 'admin') { %>
       <form action="/dogs/<%=dog.id%>/edit" method="GET">
         <button type="submit">Edit <%=dog.name%>'s Info</button>
       </form>
@@ -46,6 +47,12 @@
       <form action="/dogs/<%=dog.id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%=dog.name%>'s Info</button>
       </form>
+      <% } else { %>
+
+      <form action="/dogs/<%=dog.id%>/success" method="GET">
+        <button type="submit">Submit Application for <%=dog.name%></button>
+      </form>
+      <% } %>
 
     </main>
   </body>

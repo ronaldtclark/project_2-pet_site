@@ -4,12 +4,14 @@ const Dog = require('../models/dogs')
 const User = require('../models/users')
 
 // INDEX
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
   try {
     const foundDogs = await Dog.find({})
+    const foundUser = await User.findById(req.session.userId)
     res.render('dogs/index.ejs', {
       dogs: foundDogs,
-      userId: req.session.id
+      userId: req.session.id,
+      user: foundUser
     })
   } catch (err) {
     console.log(err)
@@ -41,6 +43,7 @@ router.post('/', async (req, res) => {
   } else {
     req.body.highEnergy = false
   }
+     
   try {
     const createdDog = await Dog.create(req.body)
     res.redirect('/dogs')
@@ -53,9 +56,26 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const foundDog = await Dog.findById(req.params.id)
+    const foundUser = await User.findById(req.session.userId)
     res.render('dogs/show.ejs', {
       dog: foundDog,
-      userId: req.session.id
+      userId: req.session.id,
+      user: foundUser
+    })
+  } catch (err) {
+    res.send(err)
+  }
+})
+
+//SUCCESS
+router.get('/:id/success', async (req, res) => {
+  try {
+    const foundDog = await Dog.findById(req.params.id)
+    const foundUser = await User.findById(req.session.userId)
+    res.render('dogs/success.ejs', {
+      dog: foundDog,
+      userId: req.session.id,
+      user: foundUser
     })
   } catch (err) {
     res.send(err)
