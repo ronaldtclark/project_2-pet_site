@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 
 require('./db/db')
@@ -39,6 +39,6 @@ app.get('/', (req, res) => {
 })
 
 //LISTENER
-app.listen(port, () => {
-  console.log('app listening on port', port)
+app.listen(PORT, () => {
+  console.log('app listening on port', PORT)
 })

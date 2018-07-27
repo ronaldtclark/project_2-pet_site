@@ -41,39 +41,21 @@
           <% } %>
         </h2><br>
 
-        <form action="/cats/<%=cat.id%>/edit" method="GET">
-          <button type="submit">Edit <%=cat.name%>'s Info</button>
-        </form>
+        <% if (user.username === 'admin') { %>
+      <form action="/cats/<%=cat.id%>/edit" method="GET">
+        <button type="submit">Edit <%=cat.name%>'s Info</button>
+      </form>
 
-        <form action="/cats/<%=cat.id%>?_method=DELETE" method="POST">
-          <button type="submit">Delete <%=cat.name%>'s Info</button>
-        </form>
-      </div>
-      <img src="<%=cat.photo%>"><br>
-      <h2>Name: <%=cat.name%></h2><br>
-      <h2>Age: <%=cat.age%></h2><br>
-      <h2>Breed: <%=cat.breed%></h2><br>
-      <h2>Good with children? 
-        <% if(cat.goodWithKids === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
-      <h2>Good with other pets? 
-        <% if(cat.goodWithPets === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
-      <h2>High energy? 
-        <% if(cat.highEnergy === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
+      <form action="/cats/<%=cat.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=cat.name%>'s Info</button>
+      </form>
+      <% } else { %>
+
+      <form action="/cats/<%=cat.id%>/success" method="GET">
+        <button type="submit">Submit Application for <%=cat.name%></button>
+      </form>
+      <% } %>
+    </div>
     </main>
   </body>
 </html>

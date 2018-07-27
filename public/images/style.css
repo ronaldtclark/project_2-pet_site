@@ -44,6 +44,17 @@ img {
 	justify-content: center;
 }
 
+.show-dog {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.show-dog img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 /*.column {
 	display: flex;
@@ -558,6 +569,9 @@ button {
 	opacity: 1;
 }
 
+.main-page {
+	width: 10%;
+}
 
 
 
