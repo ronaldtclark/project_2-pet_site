@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const bcrypt = require('bcrypt')
-const PORT = 5000
+const port = process.env.port || 3000;
 
 require('./db/db')
 
@@ -37,6 +37,6 @@ app.get('/', (req, res) => {
 })
 
 //LISTENER
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log('app listening on port', PORT)
 })
