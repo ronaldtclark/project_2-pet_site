@@ -14,6 +14,7 @@
       
     </header>
     <main>
+<<<<<<< HEAD
       <div class="show-cat">
         <img src="<%=cat.photo%>"><br>
         <h2>Name: <%=cat.name%></h2><br>
@@ -49,6 +50,35 @@
           <button type="submit">Delete <%=cat.name%>'s Info</button>
         </form>
       </div>
+=======
+      <img src="<%=cat.photo%>"><br>
+      <h2>Name: <%=cat.name%></h2><br>
+      <h2>Age: <%=cat.age%></h2><br>
+      <h2>Breed: <%=cat.breed%></h2><br>
+      <h2>Good with children? 
+        <% if(cat.goodWithKids === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>Good with other pets? 
+        <% if(cat.goodWithPets === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+      <h2>High energy? 
+        <% if(cat.highEnergy === true) { %>
+          <span> Yes </span>
+        <% } else { %>
+          <span> No </span>
+        <% } %>
+      </h2><br>
+
+    
+>>>>>>> f0c4377e70aaba1c87acce4e0bb98953fd8d5c7d
     </main>
   </body>
 </html>

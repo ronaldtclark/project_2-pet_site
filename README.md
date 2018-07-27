@@ -1,30 +1,22 @@
-# project_2-pet_site
+# wiseChoice Pet Adoption
 
-show
+Connects users with available pets based on a set of parameters.
 
-    <h3>Marital Status: <%=user.maritalStatus.checked%></h3><br>
-    <h3>Children: <%=user.children.checked%></h3><br>
-    <h3>Children's Ages (if applicable): <%=user.childrensAges%></h3><br>
-    <h3>Yard: <%=user.yard.checked%></h3><br>
-    <h3>Other Pets: <%=user.otherPets.checked%></h3><br>
+## User Stories:
+* User should be able to enter information about their lives
+* User can browse available compatible pets by photos
+* User can choose to submit an application for matched pets
+* User can see and edit their own information page, complete with a list of submitted applications.
 
+## The Goal:
+wiseChoice will display a list of pets for each user based on matches between the pet's personality and the user's lifestyle. 
+If the user has children and a certain adoptable pet is not good with children, that pet will not be displayed to the user. 
+If the user has limited home space and the pet is classified as high energy, that pet will not be displayed to the user.
+If the user has other pets in the household and the adoptable pet does not get along well with other pets, that pet will not be displayed to the user. 
 
-edit
+The goal is to find each pet a good home that they will flourish in, and avoid potential the potential problems of mismatched adoptions. 
 
-  Marital Status: <input type="checkbox" name="maritalStatus" value="single">
-                      <label for="single">Single</label>
-                      <input type="checkbox" name="maritalStatus" value="married">
-                      <label for="married">Married</label><br>
-      Do you have children? <input type="checkbox" name="children" value="yes">
-                            <label for="yes">Yes</label>
-                            <input type="checkbox" name="children" value="no">
-                            <label for="no">No</label><br>
-      If Yes, enter children's ages: <input type="text" name="childrenAges" value="<%=user.childrenAges%>"><br>
-      Do you have a yard? <input type="checkbox" name="yard" value="yes">
-                          <label for="yes">Yes</label>
-                          <input type="checkbox" name="yard" value="no">
-                          <label for="no">No</label><br>
-      Do you have other pets? <input type="checkbox" name="otherPets" value="yes">
-                              <label for="yes">Yes</label>
-                              <input type="checkbox" name="otherPets" value="no">
-                              <label for="no">No</label><br>
+By filling out information about the user ahead of time, submitting an adoption application is as easy as the click of a button.
+
+## Site Wireframe
+! [Site Layout](https://i.imgur.com/z79dfZ8.jpg)
