@@ -8,21 +8,17 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <header>
      <h1>Compatible Cats</h1>
-     
      <%- include('../partials/nav'); -%>
-     
     </header>
-
-    <main>
-      <ul>
-        <% for (let i = 0; i < cats.length; i++) { %>
-          <li>
-            <img src="<%=cats[i].photo%>"><br>
-            <a href="/cats/<%=cats[i]._id%>"><%=cats[i].name%></a>
-          </li><br>
-        <% } %>
-      </ul>
-    </main>
-
+      <div class="new-cat">
+          <ul class="hover01 column">
+            <% for (let i = 0; i < cats.length; i++) { %>
+                <li> 
+                  <a class="pickCat" href="/cats/<%=cats[i]._id%>"><figure><img src="<%=cats[i].photo%>" /></figure>
+                    <span><%=cats[i].name%></span></a>
+                </li>
+            <% } %> 
+          </ul> 
+      </div>
   </body>
 </html>

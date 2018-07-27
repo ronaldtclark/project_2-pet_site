@@ -11,41 +11,44 @@
 
       <%- include('../partials/nav'); -%>
 
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/cats">Back to Cats</a></li>
-          <li><a href="/users/<%=userId%>">User Profile</a></li>
-          <li><a href="/auth/logout">Log Out</a></li>
-        </ul>
-      </nav>
+      
     </header>
     <main>
-      <img src="<%=cat.photo%>"><br>
-      <h2>Name: <%=cat.name%></h2><br>
-      <h2>Age: <%=cat.age%></h2><br>
-      <h2>Breed: <%=cat.breed%></h2><br>
-      <h2>Good with children? 
-        <% if(cat.goodWithKids === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
-      <h2>Good with other pets? 
-        <% if(cat.goodWithPets === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
-      <h2>High energy? 
-        <% if(cat.highEnergy === true) { %>
-          <span> Yes </span>
-        <% } else { %>
-          <span> No </span>
-        <% } %>
-      </h2><br>
+      <div class="show-cat">
+        <img src="<%=cat.photo%>"><br>
+        <h2>Name: <%=cat.name%></h2><br>
+        <h2>Age: <%=cat.age%></h2><br>
+        <h2>Breed: <%=cat.breed%></h2><br>
+        <h2>Good with children? 
+          <% if(cat.goodWithKids === true) { %>
+            <span> Yes </span>
+          <% } else { %>
+            <span> No </span>
+          <% } %>
+        </h2><br>
+        <h2>Good with other pets? 
+          <% if(cat.goodWithPets === true) { %>
+            <span> Yes </span>
+          <% } else { %>
+            <span> No </span>
+          <% } %>
+        </h2><br>
+        <h2>High energy? 
+          <% if(cat.highEnergy === true) { %>
+            <span> Yes </span>
+          <% } else { %>
+            <span> No </span>
+          <% } %>
+        </h2><br>
+
+        <form action="/cats/<%=cat.id%>/edit" method="GET">
+          <button type="submit">Edit <%=cat.name%>'s Info</button>
+        </form>
+
+        <form action="/cats/<%=cat.id%>?_method=DELETE" method="POST">
+          <button type="submit">Delete <%=cat.name%>'s Info</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

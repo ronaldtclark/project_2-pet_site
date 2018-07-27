@@ -4,27 +4,21 @@
     <title>Dogs Index</title>
   </head>
   <body>
-   <link rel="stylesheet" type="text/css" href="../images/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../images/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <header>
      <h1>Compatible Dogs</h1>
-     
-
      <%- include('../partials/nav'); -%>
-     
-
     </header>
-
-    <main>
-      <ul>
-        <% for (let i = 0; i < dogs.length; i++) { %>
-          <li>
-            <img src="<%=dogs[i].photo%>"><br>
-            <a href="/dogs/<%=dogs[i]._id%>"><%=dogs[i].name%></a>
-          </li><br>
-        <% } %>
-      </ul>
-    </main>
-
+      <div class="new-dog">
+          <ul class="hover01 column">
+            <% for (let i = 0; i < dogs.length; i++) { %>
+                <li> 
+                  <a class="pickdog" href="/dogs/<%=dogs[i]._id%>"><figure><img src="<%=dogs[i].photo%>" /></figure>
+                    <span><%=dogs[i].name%></span></a>
+                </li>
+            <% } %> 
+          </ul> 
+      </div>
   </body>
 </html>
